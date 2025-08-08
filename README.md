@@ -55,7 +55,7 @@ O banco de dados é composto por duas tabelas: `PACIENTES` e `EXAMES`.
 Para rodar o projeto, você precisa ter o **Java** e o **MySQL** instalados.
 
 1.  **Baixe o arquivo `.jar`** do projeto neste link: [Download do Projeto](https://drive.google.com/drive/folders/1aNrcBuIQI0V4pr3eNylN04yKAWpCYoxZ?usp=sharing).
-2.  **Configure o banco de dados:** Verifique as configurações de conexão com o MySQL em um arquivo de configuração (`.properties` ou similar) que o projeto deve ler.
+2.  **Configure o banco de dados:** Verifique as configurações de conexão com o MySQL em um arquivo de configuração (`config.properties` ou similar) que o projeto deve ler.
 3.  **Execute o arquivo `.jar`** através do terminal:
     ```bash
     java -jar Prontuario.jar
