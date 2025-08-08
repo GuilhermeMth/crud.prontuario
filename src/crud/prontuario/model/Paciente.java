@@ -1,91 +1,96 @@
 package crud.prontuario.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Paciente {
 
-	private Long id;
-	private String nome;
-	private String cpf;
-	
-	private List<Exame> exames = new ArrayList<Exame>();
+    private Long id;
+    private String nome;
+    private String cpf;
+    private LocalDateTime dataNascimento;
+    private List<Exame> exames = new ArrayList<>();
 
-	public Paciente() {
-	}
+    public Paciente() {
+    }
+    
+    public Paciente(String nome, String cpf, LocalDateTime dataNascimento) {
+        this.nome = nome;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+        this.exames = new ArrayList<>();
+    }
 
-	public Paciente(Long id, String nome, String cpf) {
-		this.id = id;
-		this.nome = nome;
-		this.cpf = cpf;
-		exames = new ArrayList<>();
-	}
 
-	public Long getId() {
-		return id;
-	}
+    public Paciente(Long id, String nome, String cpf, LocalDateTime dataNascimento) {
+        this.id = id;
+        this.nome = nome;
+        this.cpf = cpf;
+        this.dataNascimento = dataNascimento;
+        this.exames = new ArrayList<>();
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getNome() {
-		return nome;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
+    public String getNome() {
+        return nome;
+    }
 
-	public String getCpf() {
-		return cpf;
-	}
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
+    public String getCpf() {
+        return cpf;
+    }
 
-	public List<Exame> getExames() {
-		return exames;
-	}
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 
-	public void setExames(List<Exame> exames) {
-		this.exames = exames;
-	}
+    public LocalDateTime getDataNascimento() {
+        return dataNascimento;
+    }
 
-	@Override
-	public String toString() {
-		return "Paciente [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", exames=" + exames + "]";
-	}
+    public void setDataNascimento(LocalDateTime dataNascimento) {
+        this.dataNascimento = dataNascimento;
+    }
 
-	@Override
-	public int hashCode() {
-		return Objects.hash(id);
-	}
+    public List<Exame> getExames() {
+        return exames;
+    }
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Paciente other = (Paciente) obj;
-		return Objects.equals(id, other.id);
-	}
+    public void setExames(List<Exame> exames) {
+        this.exames = exames;
+    }
 
-	
+    @Override
+    public String toString() {
+        return "Paciente [id=" + id + ", nome=" + nome + ", cpf=" + cpf + ", dataNascimento=" + dataNascimento + ", exames=" + exames + "]";
+    }
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Paciente other = (Paciente) obj;
+        return Objects.equals(id, other.id);
+    }
 }

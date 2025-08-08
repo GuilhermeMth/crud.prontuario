@@ -1,6 +1,6 @@
 package crud.prontuario.util;
 
-import java.io.FileInputStream;
+import java.io.InputStream;
 import java.io.IOException;
 import java.util.Properties;
 
@@ -10,15 +10,17 @@ public class ConfigLoader {
 	private final static Properties PROP = new Properties();
 	
 	static {
-		load(ARQUIVO);
+		load();
 	}
 	
-	public static void load(String arquivo) {
-		try {
-			FileInputStream fis = new FileInputStream(arquivo);
-			PROP.load(fis);
+	public static void load() {
+		try (InputStream input = ConfigLoader.class.getResourceAsStream("/" + ARQUIVO)) {
+			if (input == null) {
+				System.err.println("Arquivo " + ARQUIVO + " não encontrado no classpath!");
+				return;
+			}
+			PROP.load(input);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
